@@ -1,7 +1,7 @@
 # real_estate
 
 ## DB
-mysql v5.7 
+mysql v 5.7.x
 ```
 # Dump of table buildings
 # ------------------------------------------------------------
