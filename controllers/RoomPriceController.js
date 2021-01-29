@@ -7,6 +7,9 @@ export default class RoomPriceController extends CommonController{
 
     async setRoomPrice(req, res, next) {
         const {deposit, monthly, roomId} = req.body;
+        if(undefined == deposit) return res.status(400).send({code: 'MISSING_REQUIRED_PARAM'});
+        if(undefined == monthly) return res.status(400).send({code: 'MISSING_REQUIRED_PARAM'});
+        if(undefined == roomId) return res.status(400).send({code: 'MISSING_REQUIRED_PARAM'});
 
         await this.models.RoomPrices.create({deposit, monthly, roomId: roomId})
             .then(roomPrice => {
